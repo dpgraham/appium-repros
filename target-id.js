@@ -26,7 +26,7 @@ const { retryInterval } = require('asyncbox');
             console.error(e);
         } finally {
             await driver.quit();
-            log.info(`Failed '${failureCount}' out of '${i}' attempts`);
+            console.log(`Failed '${failureCount}' out of '${i}' attempts`);
         }
     }
     console.log(`=============FAILED '${failureCount}' TIMES==============`);
