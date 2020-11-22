@@ -9,7 +9,7 @@ const { retryInterval } = require('asyncbox');
         await driver.init({
             platformName: 'iOS',
             deviceName: 'iPhone 11 Pro Max',
-            platformVersion: '13.4',
+            platformVersion: process.env.PLATFORM_VERSION || '13.4',
             automationName: 'XCUITest',
             browserName: 'safari',
             safariAllowPopups: true,
@@ -18,6 +18,7 @@ const { retryInterval } = require('asyncbox');
 
         await driver.get('http://alpha.realtor.com/realestateandhomes-search/Los-Angeles_CA?ab_vst=SWIPE_C&ads=0&tracking=0&split_tcv=157');
         await B.delay(1000);
+        console.log(await driver.source());
     } catch(e) {
         console.error(e);
     } finally {
