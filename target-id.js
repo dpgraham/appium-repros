@@ -22,7 +22,7 @@ const { retryInterval } = require('asyncbox');
             console.log(await driver.source());
         } catch(e) {
             failureCount++
-            log.error(`A failure occured!!!!`);
+            console.error(`A failure occured!!!!`);
             console.error(e);
         } finally {
             await driver.quit();
