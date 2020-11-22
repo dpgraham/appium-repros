@@ -9,7 +9,7 @@ const { retryInterval } = require('asyncbox');
         await driver.init({
             platformName: 'iOS',
             deviceName: 'iPhone 11 Pro Max',
-            platformVersion: '13.7',
+            platformVersion: '13.4',
             automationName: 'XCUITest',
             browserName: 'safari',
             safariAllowPopups: true,
