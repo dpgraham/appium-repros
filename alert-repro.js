@@ -24,7 +24,7 @@ const { retryInterval } = require('asyncbox');
             await submitBtn.click();
             const startTime = +(new Date());
             //const text = await retryInterval(5, 500, () => driver.alertText());
-            console.log('####TEXT', text);  
+            //console.log('####TEXT', text);  
             await retryInterval(5, 500, () => driver.acceptAlert());
             const duration = ((+(new Date())) - startTime) / 1000;
             console.log(`It took '${duration}' seconds to accept`);
