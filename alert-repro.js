@@ -31,7 +31,7 @@ const { retryInterval } = require('asyncbox');
             failureCount++;
             console.error(e);
         } finally {
-            await driver.deleteSession();
+            await driver.quit();
         }
     }
 
