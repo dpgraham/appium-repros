@@ -4,7 +4,7 @@ const { retryInterval } = require('asyncbox');
 
 (async function () {
     let failureCount = 0;
-    for (let i=0; i<100; i++) {
+    for (let i=0; i<25; i++) {
         let driver = await wd.promiseChainRemote({host: 'localhost', port: 4723});
         try {
             await driver.init({
@@ -21,9 +21,12 @@ const { retryInterval } = require('asyncbox');
             await B.delay(1000);
             console.log(await driver.source());
         } catch(e) {
+            failureCount++
+            log.error(`A failure occured!!!!`);
             console.error(e);
         } finally {
             await driver.quit();
+            log.info(`Failed '${failureCount}' out of '${i}' attempts`);
         }
     }
     console.log(`=============FAILED '${failureCount}' TIMES==============`);
