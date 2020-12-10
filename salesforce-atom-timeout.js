@@ -7,7 +7,7 @@ const build = +new Date();
     async function runSession () {
         const caps = {
             "nativeWebTap": true,
-            "deviceName": "iPhone 8 Simulator",
+            "deviceName": process.env.CLOUD ? "iPhone 8 Simulator" : "iPhone 8",
             "ignoreAboutBlankUrl": "true",
             "calendarAccessAuthorized": true,
             "safariLogAllCommunication": "true",
