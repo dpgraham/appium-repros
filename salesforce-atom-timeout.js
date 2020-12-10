@@ -15,7 +15,7 @@ const build = +new Date();
             "version": "",
             "server:CONFIG_UUID": "a6f9b275-e458-416c-9753-c6592a2bef53",
             "newCommandTimeout": 600,
-            "platformVersion": "13.1",
+            "platformVersion": "13.4",
             "platformName": "ios",
             "appiumVersion": "1.19.1",
             "newCommandTimeout": 0,
