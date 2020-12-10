@@ -15,7 +15,7 @@ const build = +new Date();
             "version": "",
             "server:CONFIG_UUID": "a6f9b275-e458-416c-9753-c6592a2bef53",
             "newCommandTimeout": 600,
-            "platformVersion": "13.4",
+            "platformVersion": "13.1",
             "platformName": "ios",
             "appiumVersion": "1.19.1",
             "newCommandTimeout": 0,
@@ -36,11 +36,13 @@ const build = +new Date();
             console.log('ready state:', res);
             await driver.elementByTagName('body');
             await driver.url('http://www.google.com');
-            await driver.sauceJobStatus(true);
+            if (process.env.CLOUD)
+                await driver.sauceJobStatus(true);
         } catch(e) {
             failureCount++;
             console.error(e);
-            await driver.sauceJobStatus(false);
+            if (process.env.CLOUD)
+                await driver.sauceJobStatus(false);
         } finally {
             await driver.quit();
         }
