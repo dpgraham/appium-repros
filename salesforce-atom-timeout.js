@@ -20,6 +20,7 @@ const build = +new Date();
             "appiumVersion": "1.19.1",
             "newCommandTimeout": 0,
             "build": build + "-salesforce-build",
+            "fullReset": process.env.CLOUD ? false : true,
         };
         const host = process.env.CLOUD ? 'ondemand.saucelabs.com' : 'localhost';
         const port = process.env.CLOUD ? 80 : 4723;
